@@ -32,9 +32,12 @@ app.use(morgan('dev'));
 
 // Routes
 app.use(require('./routes'));
+app.use(require('./routes/auth'));
+app.use(require('./routes/url'));
 
 
 // Public
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.listen(app.get('port'), () => {
