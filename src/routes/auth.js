@@ -17,7 +17,6 @@ router.get('/profile', isLoggedIn, (req, res) => {
 
 
 /** METODOS  ***/
-
 /* CREAR CUENTA */
 router.post('/signup',signupValidator, (req, res, next) => {
   const errorsSignup = validationResult(req)

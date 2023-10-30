@@ -12,6 +12,12 @@ const signupValidator = [
     body('email', 'Debe indicar su email').isEmail(),
     body('password', 'Debe indicar la contraseña').not().isEmpty(),
     body('password','La contraseña debe tener al menos 6 digitos').isLength({min: 6}),
+    body ('passwordRepeat').trim().custom((value, {req}) => {
+      if (value !== req.body.password) {
+          throw new Error('Las contraseñanas no coinciden')
+      }
+      return true; 
+  }),
 
 ]
 
