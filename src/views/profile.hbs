@@ -1,10 +1,11 @@
   {{>navbar}}
 
-<section class="signup pt-5">
+<section class="signup col-12 mx-auto pt-1">
   <div class="container">
     <div class="signup-content">
+
       <form action="/update_profile/{{user.id}}" method="POST">
-        <h2 class="form-title">Mis datos  {{user.first_name}} {{user.last_name}}   </h2>
+        <h2 class="form-title">Pefil <br>  {{user.first_name}} {{user.last_name}}   </h2>
         <div class="row">
           <div class="form-group col-lg-6">
             <label for="firstName">Primer nombre</label>
@@ -31,7 +32,6 @@
         <div class="form-group">
           <button class="form-submit bg-primary"> Actualizar </button>
             {{>message}} 
-
         </div>
 
       </form>
